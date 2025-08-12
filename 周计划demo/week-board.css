@@ -1,0 +1,91 @@
+
+/* 周视图基础容器 */
+.wk-wrap { width: 100%; }
+
+/* 固定 7 列布局 */
+.wk-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+/* 列卡片 */
+.wk-col {
+    background: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 10px;
+    padding: 8px;
+    min-width: 140px;
+    box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* 标题（日期可点击） */
+.wk-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.wk-head a {
+    color: var(--text-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* 进度条 */
+.wk-progress {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 4px 0 6px;
+}
+.wk-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--background-modifier-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+.wk-bar > span {
+    display: block;
+    height: 100%;
+    background: var(--interactive-accent);
+    width: 0%;
+    transition: width .25s ease;
+}
+.wk-pct {
+    font-size: 11px;
+    color: var(--text-muted);
+    min-width: 32px;
+    text-align: right;
+}
+
+/* 分割线：进度条下方，分隔元信息与任务区 */
+.wk-list {
+    margin: 4px 0;
+    border-top: 1px dashed var(--background-modifier-border);
+    padding-top: 8px;
+}
+
+/* 任务项 */
+.wk-task {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    margin: 2px 0;
+}
+.wk-task .wk-text { flex: 1; word-break: break-word; }
+.wk-task input[type="checkbox"] { transform: scale(.9); margin-top: 2px; }
+.wk-task.done .wk-text { color: var(--text-muted); text-decoration: line-through; }
+
+/* 空列表提示 */
+.wk-empty { color: var(--text-muted); }
+
+/* 这里修改了页面宽度，如果不想换的可以调整列表的宽度 */
+body {
+
+    --file-line-width: 70rem;
+
+}
